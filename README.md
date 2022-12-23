@@ -2,9 +2,9 @@
 
 # Challege Week 12
 
-Netlify:
+Netlify: https://robotsgenerator.netlify.app/
 
-Sonar:
+Sonar: https://sonarcloud.io/project/overview?id=Michaeldam88_202210-W12-Michael-Damiani
 
 ## Robots
 
