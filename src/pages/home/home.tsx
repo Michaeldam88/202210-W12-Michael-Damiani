@@ -1,3 +1,7 @@
 export function Home () {
-    return <section>Home</section>;
+    return (
+        <section>
+            <h2>Home</h2>
+        </section>
+    );
 }

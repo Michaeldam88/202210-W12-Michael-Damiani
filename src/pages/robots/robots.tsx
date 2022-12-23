@@ -1,3 +1,7 @@
 export function Robots() {
-    return <section>Robots</section>;
+    return (
+        <section>
+            <h2>Robots</h2>
+        </section>
+    );
 }
