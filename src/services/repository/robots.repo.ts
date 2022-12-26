@@ -3,9 +3,8 @@ import { RobotsStructure } from "../../types/robot";
 
 const invalidIdError = new Error('Invalid ID');
 
-export class NotesRepo implements Repository<RobotsStructure> {
-    constructor(private url = 'http://localhost:3300/notes/') {
-        //
+export class RobotsRepo implements Repository<RobotsStructure> {
+    constructor(private url = 'http://localhost:3300/robots/') {
     }
 
     async load(): Promise<RobotsStructure[]> {
