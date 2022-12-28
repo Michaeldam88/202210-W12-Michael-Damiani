@@ -1,11 +1,11 @@
 export type RobotsStructure = {
     id: string;
     name: string;
-    imageUrl: string;
-    speed: string;
-    toughness: string;
+    speed: number;
+    toughness: number;
     creationDate: string;
     creationUser: string;
+    imageUrl: string;
 };
 
 export class Robot implements RobotsStructure {
@@ -15,15 +15,17 @@ export class Robot implements RobotsStructure {
         return ('000000' + aNumbers[0]).slice(-6);
     }
     id: string;
+    imageUrl: string;
+    creationDate: string;
 
     constructor(
         public name: string,
-        public imageUrl: string,
-        public speed: string,
-        public toughness: string,
-        public creationDate: string,
+        public speed: number,
+        public toughness: number,
         public creationUser: string
     ) {
+        this.imageUrl = `https://robohash.org/${this.name}.png`;
+        this.creationDate = new Date().toJSON().slice(0, 10).replace(/-/g, '/');
         this.id = Robot.generateId();
     }
 }

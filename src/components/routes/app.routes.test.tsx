@@ -25,7 +25,7 @@ describe('Given AppRoutes component', () => {
             testRoute(0);
         });
 
-        test('Then, if the route is todo, it should display the Robots Page', () => {
+        test('Then, if the route is Robots, it should display the Robots Page', () => {
             render(
                 <Router initialEntries={paths} initialIndex={1}>
                     <AppRoutes />
@@ -34,7 +34,7 @@ describe('Given AppRoutes component', () => {
             testRoute(1);
         });
 
-        test('Then, if the route is notes, it should display the Favorites Page', () => {
+        test('Then, if the route is Favorites, it should display the Favorites Page', () => {
             render(
                 <Router initialEntries={paths} initialIndex={2}>
                     <AppRoutes />
