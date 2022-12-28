@@ -17,6 +17,15 @@
       "id": "056710",
       "imageUrl": "https://robohash.org/cirippa.png",
       "creationDate": "2022/12/28"
+    },
+    {
+      "name": "Michael",
+      "speed": "4",
+      "toughness": "4",
+      "creationUser": "Bea",
+      "id": "402590",
+      "imageUrl": "https://robohash.org/Michael.png",
+      "creationDate": "2022/12/28"
     }
   ]
 }
