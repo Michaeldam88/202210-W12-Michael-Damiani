@@ -3,22 +3,8 @@ import { RobotsRepo } from './robots.repo';
 
 describe('Given a Task Repo', () => {
     const mockData = [
-        new Robot(
-            'Test name 1',
-            'Test url 1',
-            'Test speed 1',
-            'Test toughness 1',
-            'Test creationDate 1',
-            'Test creationUser 1'
-        ),
-        new Robot(
-            'Test name 2',
-            'Test url 2',
-            'Test speed 2',
-            'Test toughness 2',
-            'Test creationDate 2',
-            'Test creationUser 2'
-        ),
+        new Robot('Test name 1', 5, 10, 'Test creationUser 1'),
+        new Robot('Test name 2', 2, 4, 'Test creationUser 2'),
     ];
     const repo = new RobotsRepo();
 
