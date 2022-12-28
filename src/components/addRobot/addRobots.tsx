@@ -1,7 +1,9 @@
-import { SyntheticEvent, useState } from 'react';
+import { SyntheticEvent, useMemo, useState } from 'react';
+import { RobotsRepo } from '../../services/repository/robots.repo';
 import { Robot, RobotsStructure } from '../../types/robot';
 
 export function AddRobots() {
+    const repo = useMemo(() => new RobotsRepo(), []);
     const initialRobot: Partial<RobotsStructure> = {
         name: '',
         speed: 0,
@@ -18,7 +20,7 @@ export function AddRobots() {
     const handleSubmit = (ev: SyntheticEvent) => {
         ev.preventDefault();
 
-        setRobotData(
+        repo.create(
             new Robot(
                 robotData.name as string,
                 robotData.speed as number,
@@ -26,13 +28,17 @@ export function AddRobots() {
                 robotData.creationUser as string
             )
         );
-
-        console.log(robotData);
-        resetForm()
+        resetForm();
     };
 
-    const resetForm = () => {
+    const resetForm = () => {        
         setRobotData(initialRobot);
+        const robotForm = document.getElementById(
+            'robot-form'
+        ) as HTMLFormElement;
+        if (robotForm) {
+            robotForm.reset();
+        }
     };
 
     return (
@@ -56,6 +62,8 @@ export function AddRobots() {
                         type="number"
                         name="speed"
                         id="speed"
+                        min="0"
+                        max="10"
                         placeholder="Indica su velocidad"
                         onInput={handleInput}
                         required
@@ -66,6 +74,8 @@ export function AddRobots() {
                     <input
                         type="number"
                         name="toughness"
+                        min="0"
+                        max="10"
                         id="toughness"
                         placeholder="Indica su resistencia"
                         onInput={handleInput}
@@ -84,7 +94,7 @@ export function AddRobots() {
                     />
                 </div>
                 <div>
-                    <button>Crea</button>
+                    <button>Crear</button>
                     <button onClick={resetForm}>Borrar datos</button>
                 </div>
             </form>
