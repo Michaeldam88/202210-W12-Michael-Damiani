@@ -9,14 +9,12 @@ export function RobotsList() {
 
     const handleLoad = useCallback(async () => {
         const robotList = await repo.load();
-        setRobots(robotList);        
+        setRobots(robotList);
     }, [repo]);
 
     useEffect(() => {
         handleLoad();
     }, [handleLoad]);
-
-    
 
     return (
         <section>
@@ -31,6 +29,9 @@ export function RobotsList() {
                             <p>Resistencia: {el.toughness}</p>
                             <p>Creado por: {el.creationUser}</p>
                             <p>Fecha creacción: {el.creationDate}</p>
+                            <button>Modificar</button>
+                            <button>Añadir a favoritos</button>
+                            <button>Eliminar</button>
                         </li>
                     );
                 })}
