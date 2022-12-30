@@ -1,10 +1,11 @@
 import { SyntheticEvent, useState } from 'react';
-import { useRobots } from '../../hooks/use.robots';
 import { Robot, RobotsStructure } from '../../types/robot';
 
-export function AddRobots() {
-
-    const { handleAdd } = useRobots();
+export function AddRobots({
+    handleAdd,
+}: {
+    handleAdd: (robotData: RobotsStructure) => Promise<void>;
+}) {
     const initialRobot: Partial<RobotsStructure> = {
         name: '',
         speed: 0,
@@ -32,7 +33,7 @@ export function AddRobots() {
         resetForm();
     };
 
-    const resetForm = () => {        
+    const resetForm = () => {
         setRobotData(initialRobot);
         const robotForm = document.getElementById(
             'robot-form'

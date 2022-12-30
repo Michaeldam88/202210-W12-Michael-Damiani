@@ -34,6 +34,7 @@ export class RobotsRepo implements Repository<RobotsStructure> {
             throw new Error(`Error ${resp.status}: ${resp.statusText}`);
         return await resp.json();
     }
+    
     async update(payload: Partial<RobotsStructure>): Promise<RobotsStructure> {
         if (!payload.id) return Promise.reject(invalidIdError);
         const resp = await fetch(this.url + payload.id, {
