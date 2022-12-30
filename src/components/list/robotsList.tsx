@@ -1,16 +1,8 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
-import { RobotsRepo } from '../../services/repository/robots.repo';
-import { RobotsStructure } from '../../types/robot';
+import { useEffect } from 'react';
+import { useRobots } from '../../hooks/use.robots';
 
 export function RobotsList() {
-    const repo = useMemo(() => new RobotsRepo(), []);
-    const initialState: Array<RobotsStructure> = [];
-    const [robots, setRobots] = useState(initialState);
-
-    const handleLoad = useCallback(async () => {
-        const robotList = await repo.load();
-        setRobots(robotList);
-    }, [repo]);
+    const { handleLoad, getRobots, handleDelete } = useRobots();
 
     useEffect(() => {
         handleLoad();
@@ -20,7 +12,7 @@ export function RobotsList() {
         <section>
             <h3>Robots List</h3>
             <ul>
-                {robots.map((el) => {
+                {getRobots().map((el) => {
                     return (
                         <li key={el.id}>
                             <h4>{el.name}</h4>
@@ -31,7 +23,9 @@ export function RobotsList() {
                             <p>Fecha creacción: {el.creationDate}</p>
                             <button>Modificar</button>
                             <button>Añadir a favoritos</button>
-                            <button>Eliminar</button>
+                            <button onClick={handleDelete(el.id)}>
+                                Eliminar
+                            </button>
                         </li>
                     );
                 })}
