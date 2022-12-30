@@ -1,9 +1,11 @@
-import { SyntheticEvent, useMemo, useState } from 'react';
-import { RobotsRepo } from '../../services/repository/robots.repo';
+import { SyntheticEvent, useState } from 'react';
 import { Robot, RobotsStructure } from '../../types/robot';
 
-export function AddRobots() {
-    const repo = useMemo(() => new RobotsRepo(), []);
+export function AddRobots({
+    handleAdd,
+}: {
+    handleAdd: (robotData: RobotsStructure) => Promise<void>;
+}) {
     const initialRobot: Partial<RobotsStructure> = {
         name: '',
         speed: 0,
@@ -20,7 +22,7 @@ export function AddRobots() {
     const handleSubmit = (ev: SyntheticEvent) => {
         ev.preventDefault();
 
-        repo.create(
+        handleAdd(
             new Robot(
                 robotData.name as string,
                 robotData.speed as number,
@@ -31,7 +33,7 @@ export function AddRobots() {
         resetForm();
     };
 
-    const resetForm = () => {        
+    const resetForm = () => {
         setRobotData(initialRobot);
         const robotForm = document.getElementById(
             'robot-form'

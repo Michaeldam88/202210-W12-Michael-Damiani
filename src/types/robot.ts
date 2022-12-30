@@ -6,6 +6,7 @@ export type RobotsStructure = {
     creationDate: string;
     creationUser: string;
     imageUrl: string;
+    isFavorited: boolean
 };
 
 export class Robot implements RobotsStructure {
@@ -17,6 +18,7 @@ export class Robot implements RobotsStructure {
     id: string;
     imageUrl: string;
     creationDate: string;
+    isFavorited: boolean;
 
     constructor(
         public name: string,
@@ -27,5 +29,6 @@ export class Robot implements RobotsStructure {
         this.imageUrl = `https://robohash.org/${this.name}.png`;
         this.creationDate = new Date().toJSON().slice(0, 10).replace(/-/g, '/');
         this.id = Robot.generateId();
+        this.isFavorited = false;
     }
 }
