@@ -5,11 +5,11 @@ body {
     font-family: 'Chakra Petch', sans-serif;
     padding: 1.5rem;
     height: 90vh;
+    color: #b5c0c9;
 }
 
 .header {
     &__title {
-        color: #b5c0c9;
         font-size: 3rem;
     }
 }
@@ -26,12 +26,15 @@ body {
         background-image: url(../public/assets/menu_button.png);
         background-repeat: no-repeat;
         background-size: cover;
-        padding: 0.4rem;
-        width: 5rem;
-        height: 2rem;
+        width: 6rem;
+        height: 2.8rem;
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+    &__element:hover {
+        background-image: url(../public/assets/menu_button_selected.png);
+        cursor: pointer;
     }
 
     &__link {
@@ -44,12 +47,60 @@ body {
     background-image: url(../public/assets/home-background.jpg);
     padding: 1rem;
     height: 40rem;
-    &__title {        
-        color: #b5c0c9;
+    box-shadow: 0 0 5px 5px black;
+    &__title {
         font-size: 1.8rem;
     }
-    &__text{
-        color: #b5c0c9;
+}
+
+.robots {
+    background-image: url(../public/assets/home-background.jpg);
+    padding: 1rem;
+    height: 40rem;
+    box-shadow: 0 0 5px 5px black;
+    &__title {
+        font-size: 1.8rem;
+    }
+}
+
+.add-robots {
+    &__form {
+        width: 18rem;
+        background-color: #101111f2;
+        box-shadow: 0px 0px 6px 4px #3fa9f580;
+        padding: 1rem;
     }
 
+    &__container {
+        display: flex;
+    }
+
+    &__label {
+        margin-right: 0.5rem;
+        padding: 0.15rem;
+    }
+
+    &__input {
+        background-color: transparent;
+        margin-bottom: 0.3rem;
+        color: white;
+        width: 100%;
+        padding: 0.15rem 0.4rem;
+    }
+    &__button-container {
+        margin-top: 0.4rem;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__button {
+        font-family: 'Chakra Petch', sans-serif;
+        margin-right: 0.5rem;
+        background-color: #3fa9f5de;
+        padding: 0.15rem 0.4rem;
+        border-radius: 0.3rem;
+        border: solid 1px black;
+        color: #dfe2e5;
+        font-weight: 600;
+    }
 }

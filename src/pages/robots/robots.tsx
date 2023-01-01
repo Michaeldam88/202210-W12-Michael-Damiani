@@ -12,11 +12,11 @@ export function Robots() {
     }, [handleLoad]);
 
     return (
-        <section>
-            <h2>Robots</h2>
+        <section className="robots">
+            <h2 className="robots__title">Robots</h2>
             <AddRobots handleAdd={handleAdd} />
             <section>
-                <h3>Robots List</h3>
+                <h3 className="list__title">Robots List</h3>
                 <ul>
                     {robots.map((el) => (
                         <Robot
