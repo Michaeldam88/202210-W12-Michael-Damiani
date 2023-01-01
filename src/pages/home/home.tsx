@@ -1,13 +1,12 @@
 export function Home() {
     const totalRobots = JSON.parse(
         sessionStorage.getItem('totalRobots') as string
-    );;
+    );
     return (
-        <section>
-            <h2>Home</h2>
-            <img src="https://robohash.org/factory.png" alt="Home Logo"></img>
-            <p data-testid="totalRobots">
-                Total robots disponibles {totalRobots}
+        <section className="home">
+            <h2 className="home__title">Home</h2>
+            <p className="home__text" data-testid="totalRobots">
+                Total robots disponibles {totalRobots ? totalRobots : 0}
             </p>
         </section>
     );

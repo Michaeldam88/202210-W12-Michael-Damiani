@@ -1,3 +1,55 @@
+@import-normalize;
+
 body {
-    background-color: antiquewhite;
+    background-color: #211f24;
+    font-family: 'Chakra Petch', sans-serif;
+    padding: 1.5rem;
+    height: 90vh;
+}
+
+.header {
+    &__title {
+        color: #b5c0c9;
+        font-size: 3rem;
+    }
+}
+
+.navbar {
+    &__list {
+        display: flex;
+        list-style: none;
+        padding-left: 1rem;
+    }
+
+    &__element {
+        margin-right: 1rem;
+        background-image: url(../public/assets/menu_button.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 0.4rem;
+        width: 5rem;
+        height: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__link {
+        text-decoration: none;
+        color: #b5c0c9;
+    }
+}
+
+.home {
+    background-image: url(../public/assets/home-background.jpg);
+    padding: 1rem;
+    height: 40rem;
+    &__title {        
+        color: #b5c0c9;
+        font-size: 1.8rem;
+    }
+    &__text{
+        color: #b5c0c9;
+    }
+
 }

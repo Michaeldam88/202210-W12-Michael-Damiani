@@ -1,24 +1,44 @@
 {
-    "robots": [
-        {
-            "name": "Skyllo",
-            "speed": "2",
-            "toughness": "2",
-            "creationUser": "Mar",
-            "id": "059931",
-            "imageUrl": "https://robohash.org/Skyllo.png",
-            "creationDate": "2023/01/01",
-            "isFavorited": false
-        },
-        {
-            "name": "terminator",
-            "speed": "1",
-            "toughness": "1",
-            "creationUser": "Marco",
-            "id": "650000",
-            "imageUrl": "https://robohash.org/terminator.png",
-            "creationDate": "2023/01/01",
-            "isFavorited": false
-        }
-    ]
+  "robots": [
+    {
+      "name": "Skyllo",
+      "speed": "2",
+      "toughness": "2",
+      "creationUser": "Mar",
+      "id": "059931",
+      "imageUrl": "https://robohash.org/Skyllo.png",
+      "creationDate": "2023/01/01",
+      "isFavorited": true
+    },
+    {
+      "name": "terminator",
+      "speed": "1",
+      "toughness": "1",
+      "creationUser": "Marco",
+      "id": "650000",
+      "imageUrl": "https://robohash.org/terminator.png",
+      "creationDate": "2023/01/01",
+      "isFavorited": false
+    },
+    {
+      "name": "tito",
+      "speed": "2",
+      "toughness": "3",
+      "creationUser": "Bea",
+      "id": "484837",
+      "imageUrl": "https://robohash.org/tito.png",
+      "creationDate": "2023/01/01",
+      "isFavorited": false
+    },
+    {
+      "name": "tita",
+      "speed": "1",
+      "toughness": "1",
+      "creationUser": "Bea",
+      "id": "014657",
+      "imageUrl": "https://robohash.org/tita.png",
+      "creationDate": "2023/01/01",
+      "isFavorited": false
+    }
+  ]
 }
