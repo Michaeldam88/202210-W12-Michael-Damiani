@@ -1,14 +1,24 @@
 {
-  "robots": [
-    {
-      "name": "zippo",
-      "speed": "2",
-      "toughness": "2",
-      "creationUser": "Marco",
-      "id": "110724",
-      "imageUrl": "https://robohash.org/zippo.png",
-      "creationDate": "2022/12/30",
-      "isFavorited": true
-    }
-  ]
+    "robots": [
+        {
+            "name": "Skyllo",
+            "speed": "2",
+            "toughness": "2",
+            "creationUser": "Mar",
+            "id": "059931",
+            "imageUrl": "https://robohash.org/Skyllo.png",
+            "creationDate": "2023/01/01",
+            "isFavorited": false
+        },
+        {
+            "name": "terminator",
+            "speed": "1",
+            "toughness": "1",
+            "creationUser": "Marco",
+            "id": "650000",
+            "imageUrl": "https://robohash.org/terminator.png",
+            "creationDate": "2023/01/01",
+            "isFavorited": false
+        }
+    ]
 }

@@ -1,5 +1,7 @@
 export function Home() {
-    const totalRobots = 'XXX';
+    const totalRobots = JSON.parse(
+        sessionStorage.getItem('totalRobots') as string
+    );;
     return (
         <section>
             <h2>Home</h2>
