@@ -9,5 +9,6 @@ export function Home() {
                 Total robots disponibles {totalRobots ? totalRobots : 0}
             </p>
         </section>
+        
     );
 }
