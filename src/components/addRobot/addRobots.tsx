@@ -44,12 +44,19 @@ export function AddRobots({
     };
 
     return (
-        <section>
+        <section className="add-robots">
             <h3>New Robot</h3>
-            <form onSubmit={handleSubmit} id="robot-form">
-                <div>
-                    <label htmlFor="name">Nombre</label>
+            <form
+                className="add-robots__form"
+                onSubmit={handleSubmit}
+                id="robot-form"
+            >
+                <div className="add-robots__container">
+                    <label className="add-robots__label" htmlFor="name">
+                        Nombre:
+                    </label>
                     <input
+                        className="add-robots__input"
                         type="text"
                         name="name"
                         id="name"
@@ -58,35 +65,44 @@ export function AddRobots({
                         required
                     />
                 </div>
-                <div>
-                    <label htmlFor="speed">Velocidad</label>
+                <div className="add-robots__container">
+                    <label className="add-robots__label" htmlFor="speed">
+                        Velocidad:
+                    </label>
                     <input
+                        className="add-robots__input"
                         type="number"
                         name="speed"
                         id="speed"
                         min="0"
                         max="10"
-                        placeholder="Indica su velocidad"
+                        placeholder="Indica su velocidad 1-10"
                         onInput={handleInput}
                         required
                     />
                 </div>
-                <div>
-                    <label htmlFor="toughness">Resistencia</label>
+                <div className="add-robots__container">
+                    <label className="add-robots__label" htmlFor="toughness">
+                        Resistencia:
+                    </label>
                     <input
+                        className="add-robots__input"
                         type="number"
                         name="toughness"
                         min="0"
                         max="10"
                         id="toughness"
-                        placeholder="Indica su resistencia"
+                        placeholder="Indica su resistencia 1-10"
                         onInput={handleInput}
                         required
                     />
                 </div>
-                <div>
-                    <label htmlFor="creationUser">Creador</label>
+                <div className="add-robots__container">
+                    <label className="add-robots__label" htmlFor="creationUser">
+                        Creador:
+                    </label>
                     <input
+                        className="add-robots__input"
                         type="text"
                         name="creationUser"
                         id="creationUser"
@@ -95,9 +111,15 @@ export function AddRobots({
                         required
                     />
                 </div>
-                <div>
-                    <button>Crear</button>
-                    <button onClick={resetForm}>Borrar datos</button>
+                <div className="add-robots__button-container">
+                    <button className="add-robots__button">Crear</button>
+                    <button
+                        className="
+                        add-robots__button"
+                        onClick={resetForm}
+                    >
+                        Borrar datos
+                    </button>
                 </div>
             </form>
         </section>

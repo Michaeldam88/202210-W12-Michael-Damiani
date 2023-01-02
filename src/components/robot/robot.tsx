@@ -10,15 +10,20 @@ export function Robot({
     handleUpdate: (robot: Partial<RobotsStructure>) => Promise<void>;
 }) {
     return (
-        <li key={robot.id}>
-            <h4>{robot.name}</h4>
-            <img src={robot.imageUrl} alt={robot.name} />
-            <p>Velocidad: {robot.speed}</p>
-            <p>Resistencia: {robot.toughness}</p>
-            <p>Creado por: {robot.creationUser}</p>
-            <p>Fecha creacción: {robot.creationDate}</p>
-            <button>Modificar</button>
+        <li className="robot" key={robot.id}>
+            <h4 className="robot__title">{robot.name}</h4>
+            <img
+                className="robot__image"
+                src={robot.imageUrl}
+                alt={robot.name}
+            />
+            <p className="robot__text">Velocidad: {robot.speed}</p>
+            <p className="robot__text">Resistencia: {robot.toughness}</p>
+            <p className="robot__text">Creado por: {robot.creationUser}</p>
+            <p className="robot__text">Fecha creacción: {robot.creationDate}</p>
+            <button className="robot__button robot__button--first">Modificar</button>
             <button
+                className="robot__button"
                 onClick={() =>
                     handleUpdate({
                         ...robot,
@@ -31,7 +36,12 @@ export function Robot({
                     : 'Añadir a favoritos'}
             </button>
             {handleDelete ? (
-                <button onClick={() => handleDelete(robot.id)}>Eliminar</button>
+                <button
+                    className="robot__button"
+                    onClick={() => handleDelete(robot.id)}
+                >
+                    Eliminar
+                </button>
             ) : null}
         </li>
     );

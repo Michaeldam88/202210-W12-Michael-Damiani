@@ -12,12 +12,12 @@ export function Robots() {
     }, [handleLoad]);
 
     return (
-        <section>
-            <h2>Robots</h2>
+        <section className="robots">
+            <h2 className="robots__title">Robots</h2>
             <AddRobots handleAdd={handleAdd} />
             <section>
                 <h3>Robots List</h3>
-                <ul>
+                <ul className="robots__list">
                     {robots.map((el) => (
                         <Robot
                             key={el.id}
