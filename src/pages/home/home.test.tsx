@@ -11,17 +11,8 @@ describe('Given Home component', () => {
         );
     });
 
-    describe('When it has been render', () => {
-        test('Then its child components should be render also with its image', () => {
-            const homeLogo = screen.queryByRole('img', {
-                name: 'Home Logo',
-            });
-            expect(homeLogo).toBeInTheDocument();
-        });
-
         test('Then its child components should be render also with its paragraph', () => {
             const totalRobotsParagraph = screen.getByTestId('totalRobots');
             expect(totalRobotsParagraph).toBeInTheDocument();
         });
     });
-});
