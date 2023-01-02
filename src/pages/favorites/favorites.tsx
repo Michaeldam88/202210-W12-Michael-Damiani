@@ -10,13 +10,19 @@ export function Favorites() {
     }, [handleLoad]);
 
     return (
-        <section>
+        <section className="favorites">
             <h2>Favorites</h2>
-            {robots
-                .filter((el) => el.isFavorited)
-                .map((el) => (
-                    <Robot key={el.id} robot={el} handleUpdate={handleUpdate} />
-                ))}
+            <ul className="favorites__list">
+                {robots
+                    .filter((el) => el.isFavorited)
+                    .map((el) => (
+                        <Robot
+                            key={el.id}
+                            robot={el}
+                            handleUpdate={handleUpdate}
+                        />
+                    ))}
+            </ul>
         </section>
     );
 }

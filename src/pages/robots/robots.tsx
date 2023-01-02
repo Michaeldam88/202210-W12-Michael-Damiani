@@ -16,8 +16,8 @@ export function Robots() {
             <h2 className="robots__title">Robots</h2>
             <AddRobots handleAdd={handleAdd} />
             <section>
-                <h3 className="list__title">Robots List</h3>
-                <ul>
+                <h3>Robots List</h3>
+                <ul className="robots__list">
                     {robots.map((el) => (
                         <Robot
                             key={el.id}

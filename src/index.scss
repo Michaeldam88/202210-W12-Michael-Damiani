@@ -9,6 +9,7 @@ body {
 }
 
 .header {
+    margin-bottom: 2rem;
     &__title {
         font-size: 3rem;
     }
@@ -54,12 +55,20 @@ body {
 }
 
 .robots {
-    background-image: url(../public/assets/home-background.jpg);
+    background-image: url(../public/assets/robots-background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
     padding: 1rem;
-    height: 40rem;
     box-shadow: 0 0 5px 5px black;
     &__title {
         font-size: 1.8rem;
+    }
+    &__list {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        padding: 0;
     }
 }
 
@@ -102,5 +111,57 @@ body {
         border: solid 1px black;
         color: #dfe2e5;
         font-weight: 600;
+    }
+}
+
+.robot {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    margin-right: 1.5rem;
+    background-color: #101111f2;
+    box-shadow: 0px 0px 6px 4px #3fa9f580;
+    &__title {
+        margin: 0;
+        font-size: 1.2rem;
+    }
+    &__image {
+        width: 200px;
+        height: 200px;
+        align-self: center;
+        margin-bottom: 0.3rem;
+    }
+    &__text {
+        margin: 0.3rem;
+    }
+    &__button {
+        font-family: 'Chakra Petch', sans-serif;
+        margin-bottom: 0.3rem;
+        background-color: #3fa9f5de;
+        padding: 0.3rem 0.4rem;
+        border-radius: 0.3rem;
+        border: solid 1px black;
+        color: #dfe2e5;
+        font-weight: 600;
+    }
+
+    &__button--first {
+        margin-top: 0.3rem;
+    }
+}
+
+.favorites{    
+    background-image: url(../public/assets/robots-background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 1rem;
+    box-shadow: 0 0 5px 5px black;
+    &__list{
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        padding: 0;
     }
 }
