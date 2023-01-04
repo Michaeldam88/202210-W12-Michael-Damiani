@@ -1,6 +1,6 @@
 import { RobotsStructure } from '../../types/robot';
 
-export function Robot({
+export function RobotElement({
     robot,
     handleDelete,
     handleUpdate,
@@ -21,7 +21,9 @@ export function Robot({
             <p className="robot__text">Resistencia: {robot.toughness}</p>
             <p className="robot__text">Creado por: {robot.creationUser}</p>
             <p className="robot__text">Fecha creacción: {robot.creationDate}</p>
-            <button className="robot__button robot__button--first">Modificar</button>
+            <button className="robot__button robot__button--first">
+                Modificar
+            </button>
             <button
                 className="robot__button"
                 onClick={() =>

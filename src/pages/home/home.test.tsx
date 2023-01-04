@@ -11,8 +11,8 @@ describe('Given Home component', () => {
         );
     });
 
-        test('Then its child components should be render also with its paragraph', () => {
-            const totalRobotsParagraph = screen.getByTestId('totalRobots');
-            expect(totalRobotsParagraph).toBeInTheDocument();
-        });
+    test('Then its child components should be render also with its paragraph', () => {
+        const totalRobotsParagraph = screen.getByTestId('totalRobots');
+        expect(totalRobotsParagraph).toBeInTheDocument();
     });
+});

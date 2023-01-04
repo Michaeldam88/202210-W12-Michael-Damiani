@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { AddRobots } from '../../components/addRobot/addRobots';
-import { Robot } from '../../components/robot/robot';
+import { RobotElement } from '../../components/robotElement/robotElement';
 import { useRobots } from '../../hooks/use.robots';
 
 export function Robots() {
@@ -19,7 +19,7 @@ export function Robots() {
                 <h3>Robots List</h3>
                 <ul className="robots__list">
                     {robots.map((el) => (
-                        <Robot
+                        <RobotElement
                             key={el.id}
                             robot={el}
                             handleDelete={handleDelete}
