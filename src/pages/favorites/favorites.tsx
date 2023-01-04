@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Robot } from '../../components/robot/robot';
+import { RobotElement } from '../../components/robotElement/robotElement';
 import { useRobots } from '../../hooks/use.robots';
 
 export function Favorites() {
@@ -16,7 +16,7 @@ export function Favorites() {
                 {robots
                     .filter((el) => el.isFavorited)
                     .map((el) => (
-                        <Robot
+                        <RobotElement
                             key={el.id}
                             robot={el}
                             handleUpdate={handleUpdate}

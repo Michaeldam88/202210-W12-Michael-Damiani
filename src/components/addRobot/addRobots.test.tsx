@@ -4,7 +4,7 @@ import userEvent from '@testing-library/user-event';
 
 describe('Given "AddRobots" component', () => {
     const handleAdd = jest.fn();
-    const resetForm = jest.fn();
+    //const resetForm = jest.fn();
 
     beforeEach(() => {
         render(<AddRobots handleAdd={handleAdd}></AddRobots>);
@@ -24,9 +24,10 @@ describe('Given "AddRobots" component', () => {
         const mockName = 'Test name';
         const mockSpeed = '2';
         const mockToughness = '2';
+        const mockCreationUser = 'Test creationUser';
         const mockSpeedResult = 2;
         const mockToughnessResult = 2;
-        const mockCreationUser = 'Test creationUser';
+        
 
         let inputTextBox: Array<HTMLElement>;
         let inputNumberBox: Array<HTMLElement>;
