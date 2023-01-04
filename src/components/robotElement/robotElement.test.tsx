@@ -8,8 +8,9 @@ describe('Given "Item" component', () => {
     const handleDelete = jest.fn();
     const mockName = 'Test_name';
     const mockSpeed = 2;
-    const mockToughness = 2;
+    const mockToughness = 3;
     const mockCreationUser = 'Test creationUser';
+    const date = new Date().toJSON().slice(0, 10).replace(/-/g, '/');
 
     const mockRobot = new Robot(
         mockName,
@@ -30,8 +31,11 @@ describe('Given "Item" component', () => {
             const elements = [
                 screen.getByRole('heading', { name: mockName }),
                 screen.getByRole('img'),
-                //...screen.getAllByRole('paragraph'),
-                //...screen.getAllByRole('button'),
+                screen.getByText('Velocidad: 2'),
+                screen.getByText('Resistencia: 3'),
+                screen.getByText("Creado por: Test creationUser"),
+                screen.getByText("Fecha creacción: " + date),
+                ...screen.getAllByRole('button'),
             ];
 
             expect(elements[0]).toBeInTheDocument();
@@ -39,11 +43,17 @@ describe('Given "Item" component', () => {
                 'src',
                 `https://robohash.org/${mockName}.png`
             );
+            expect(elements[2]).toBeInTheDocument()
+            expect(elements[3]).toBeInTheDocument();
+            expect(elements[4]).toBeInTheDocument();
+            expect(elements[5]).toBeInTheDocument();
 
-            // userEvent.click(elements[3][1]);
-            // expect(handleUpdate).toHaveBeenCalledTimes(1);
-            // userEvent.click(elements[3][2]);
-            // expect(handleDelete).toHaveBeenCalledTimes(1);
+            userEvent.click(elements[7]);
+            expect(handleUpdate).toHaveBeenCalledTimes(1);            
+            userEvent.click(elements[8]);
+            expect(handleDelete).toHaveBeenCalledTimes(1);
+
+            
         });
     });
 });
