@@ -33,9 +33,10 @@ describe('Given "Item" component', () => {
                 screen.getByRole('img'),
                 screen.getByText('Velocidad: 2'),
                 screen.getByText('Resistencia: 3'),
-                screen.getByText("Creado por: Test creationUser"),
-                screen.getByText("Fecha creacción: " + date),
-                ...screen.getAllByRole('button'),
+                screen.getByText('Creado por: Test creationUser'),
+                screen.getByText('Fecha creacción: ' + date),
+                screen.getByRole('button', { name: 'Añadir a favoritos' }),
+                screen.getByRole('button', { name: 'Eliminar' }),
             ];
 
             expect(elements[0]).toBeInTheDocument();
@@ -43,17 +44,17 @@ describe('Given "Item" component', () => {
                 'src',
                 `https://robohash.org/${mockName}.png`
             );
-            expect(elements[2]).toBeInTheDocument()
+            expect(elements[2]).toBeInTheDocument();
             expect(elements[3]).toBeInTheDocument();
             expect(elements[4]).toBeInTheDocument();
             expect(elements[5]).toBeInTheDocument();
+            expect(elements[6]).toBeInTheDocument();
 
-            userEvent.click(elements[7]);
-            expect(handleUpdate).toHaveBeenCalledTimes(1);            
-            userEvent.click(elements[8]);
-            expect(handleDelete).toHaveBeenCalledTimes(1);
-
+            await userEvent.click(elements[6]);   
+            expect(handleUpdate).toHaveBeenCalledTimes(1);
             
+            userEvent.click(elements[7]);
+            expect(handleDelete).toHaveBeenCalledTimes(1);
         });
     });
 });

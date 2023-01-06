@@ -3,8 +3,7 @@ import { AddRobots } from './addRobots';
 import userEvent from '@testing-library/user-event';
 
 describe('Given "AddRobots" component', () => {
-    const handleAdd = jest.fn();
-    //const resetForm = jest.fn();
+    const handleAdd = jest.fn();    
 
     beforeEach(() => {
         render(<AddRobots handleAdd={handleAdd}></AddRobots>);
@@ -60,16 +59,16 @@ describe('Given "AddRobots" component', () => {
             userEvent.click(elementsButton[0]);
             expect(handleAdd).toHaveBeenCalled();
         });
-        // test('Then form could be used for reset all inputs', () => {            
-        //     userEvent.type(inputTextBox[0], mockName);
-        //     userEvent.type(inputNumberBox[0], mockSpeed);
-        //     userEvent.type(inputNumberBox[1], mockToughness);
-        //     userEvent.type(inputTextBox[1], mockCreationUser);            
-        //     userEvent.click(elementsButton[1]);            
-        //     expect(inputTextBox[0]).toHaveValue('');
-        //     expect(inputNumberBox[0]).toHaveValue(null);
-        //     expect(inputNumberBox[1]).toHaveValue(null);
-        //     expect(inputTextBox[1]).toHaveValue('');
-        // });
+        test('Then the reset button could be used for reset all inputs', async () => {            
+            userEvent.type(inputTextBox[0], mockName);
+            userEvent.type(inputNumberBox[0], mockSpeed);
+            userEvent.type(inputNumberBox[1], mockToughness);
+            userEvent.type(inputTextBox[1], mockCreationUser);            
+            await userEvent.click(elementsButton[1]);            
+            expect(inputTextBox[0]).toHaveValue('');
+            expect(inputNumberBox[0]).toHaveValue(null);
+            expect(inputNumberBox[1]).toHaveValue(null);
+            expect(inputTextBox[1]).toHaveValue('');
+        });
     });
 });
