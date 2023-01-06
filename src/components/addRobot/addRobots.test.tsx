@@ -59,12 +59,12 @@ describe('Given "AddRobots" component', () => {
             userEvent.click(elementsButton[0]);
             expect(handleAdd).toHaveBeenCalled();
         });
-        test('Then the reset button could be used for reset all inputs', async () => {            
+        test('Then the reset button could be used for reset all inputs', () => {            
             userEvent.type(inputTextBox[0], mockName);
             userEvent.type(inputNumberBox[0], mockSpeed);
             userEvent.type(inputNumberBox[1], mockToughness);
             userEvent.type(inputTextBox[1], mockCreationUser);            
-            await userEvent.click(elementsButton[1]);            
+            userEvent.click(elementsButton[1]);            
             expect(inputTextBox[0]).toHaveValue('');
             expect(inputNumberBox[0]).toHaveValue(null);
             expect(inputNumberBox[1]).toHaveValue(null);
