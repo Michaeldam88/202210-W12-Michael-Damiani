@@ -50,7 +50,7 @@ describe('Given "Item" component', () => {
             expect(elements[5]).toBeInTheDocument();
             expect(elements[6]).toBeInTheDocument();
 
-            await userEvent.click(elements[6]);   
+            userEvent.click(elements[6]);   
             expect(handleUpdate).toHaveBeenCalledTimes(1);
             
             userEvent.click(elements[7]);
