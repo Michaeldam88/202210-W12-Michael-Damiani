@@ -151,6 +151,14 @@ body {
     &__button--first {
         margin-top: 0.3rem;
     }
+
+    &__input{
+        background-color: #3995d7b8;
+        margin-top: 0.3rem;
+        color: white;
+        width: 90%;
+        padding: 0.15rem 0.4rem;
+    }
 }
 
 .favorites{    

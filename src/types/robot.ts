@@ -6,7 +6,8 @@ export type RobotsStructure = {
     creationDate: string;
     creationUser: string;
     imageUrl: string;
-    isFavorited: boolean
+    isFavorited: boolean;
+    editingMode: boolean;
 };
 
 export class Robot implements RobotsStructure {
@@ -19,6 +20,7 @@ export class Robot implements RobotsStructure {
     imageUrl: string;
     creationDate: string;
     isFavorited: boolean;
+    editingMode: boolean;
 
     constructor(
         public name: string,
@@ -30,5 +32,6 @@ export class Robot implements RobotsStructure {
         this.creationDate = new Date().toJSON().slice(0, 10).replace(/-/g, '/');
         this.id = Robot.generateId();
         this.isFavorited = false;
+        this.editingMode = false;
     }
 }
