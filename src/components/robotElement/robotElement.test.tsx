@@ -70,8 +70,8 @@ describe('Given "Item" component', () => {
     });
 
     describe('When we are in editing mode', () => {
-        let inputNumberBox: Array<HTMLElement>;        
-        
+        let inputNumberBox: Array<HTMLElement>;
+
         test('Then form could be used for type content', () => {
             render(
                 <RobotElement
@@ -80,9 +80,15 @@ describe('Given "Item" component', () => {
                     handleDelete={handleDelete}
                 ></RobotElement>
             );
-
+            const editBtn = screen.getByRole('button', {
+                name: 'Salir Edición',
+            });
             inputNumberBox = screen.getAllByRole('spinbutton');
 
+            userEvent.click(editBtn);
+            expect(handleUpdate).toHaveBeenCalledTimes(1);
+
+            expect(editBtn).toBeInTheDocument();
             expect(inputNumberBox[0]).toBeInTheDocument();
             expect(inputNumberBox[1]).toBeInTheDocument();
             userEvent.type(inputNumberBox[0], '2');

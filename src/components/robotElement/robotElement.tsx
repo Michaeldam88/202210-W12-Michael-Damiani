@@ -27,7 +27,7 @@ export function RobotElement({
                 alt={robot.name}
             />
             <p className="robot__text">
-                Velocidad: {' '}
+                Velocidad:{' '}
                 {robot.editingMode ? (
                     <input
                         className="robot__input"
