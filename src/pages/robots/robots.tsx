@@ -18,10 +18,10 @@ export function Robots() {
             <section>
                 <h3>Robots List</h3>
                 <ul className="robots__list">
-                    {robots.map((el) => (
+                    {robots.map((element) => (
                         <RobotElement
-                            key={el.id}
-                            robot={el}
+                            key={element.id}
+                            robot={element}
                             handleDelete={handleDelete}
                             handleUpdate={handleUpdate}
                         />
