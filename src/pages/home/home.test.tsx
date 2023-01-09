@@ -2,8 +2,39 @@ import { render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import { Home } from './home';
 
+const sessionStorageMock = (function () {
+    let store: { [keys: string]: string } = {};
+
+    return {
+        getItem(key: string) {
+            return store[key]||null;
+        },
+
+        setItem(key: string, value: string) {
+            store[key] = value;
+        },
+
+        clear() {
+            store = {};
+        },
+
+        removeItem(key: string) {
+            delete store[key];
+        },
+
+        getAll() {
+            return store;
+        },
+    };
+})();
+
+Object.defineProperty(window, 'sessionStorage', { value: sessionStorageMock });
+
 describe('Given Home component', () => {
+
+    
     beforeEach(() => {
+        sessionStorage.clear();
         render(
             <BrowserRouter>
                 <Home />
@@ -25,19 +56,14 @@ describe('Given Home component', () => {
         );
         expect(noRobotsParagraph).toBeInTheDocument();
     });
-});
 
-describe('Given sessin storage with data', () => {
-    sessionStorage.setItem('totalRobots', JSON.stringify(2));
-    beforeEach(() => {
+    test('if there are 2 robots in the database it should show the correct number', () => {
+        sessionStorage.setItem('totalRobots', JSON.stringify(2));
         render(
             <BrowserRouter>
                 <Home />
             </BrowserRouter>
         );
-    });
-
-    test('if there is 2 robots in session storage should show the correct number', () => {
         const noRobotsParagraph = screen.getByText(
             'Total robots disponibles 2'
         );

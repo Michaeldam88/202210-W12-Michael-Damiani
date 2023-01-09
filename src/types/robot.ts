@@ -1,8 +1,8 @@
 export type RobotsStructure = {
     id: string;
     name: string;
-    speed: number;
-    toughness: number;
+    speed: number | null;
+    toughness: number | null;
     creationDate: string;
     creationUser: string;
     imageUrl: string;
