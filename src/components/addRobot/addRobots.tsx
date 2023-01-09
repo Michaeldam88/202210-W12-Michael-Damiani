@@ -8,8 +8,8 @@ export function AddRobots({
 }) {
     const initialRobot: Partial<RobotsStructure> = {
         name: '',
-        speed: 0,
-        toughness: 0,
+        speed: null,
+        toughness: null,
         creationUser: '',
     };
     const [robotData, setRobotData] = useState(initialRobot);
@@ -35,12 +35,6 @@ export function AddRobots({
 
     const resetForm = () => {
         setRobotData(initialRobot);
-        const robotForm = document.getElementById(
-            'robot-form'
-        ) as HTMLFormElement;
-        if (robotForm) {
-            robotForm.reset();
-        }
     };
 
     return (
@@ -62,6 +56,7 @@ export function AddRobots({
                         id="name"
                         placeholder="Nombre del Robot"
                         onInput={handleInput}
+                        value={robotData.name}
                         required
                     />
                 </div>
@@ -76,6 +71,7 @@ export function AddRobots({
                         id="speed"
                         min="0"
                         max="10"
+                        value={robotData.speed || ''}
                         placeholder="Indica su velocidad 1-10"
                         onInput={handleInput}
                         required
@@ -92,6 +88,7 @@ export function AddRobots({
                         min="0"
                         max="10"
                         id="toughness"
+                        value={robotData.toughness || ''}
                         placeholder="Indica su resistencia 1-10"
                         onInput={handleInput}
                         required
@@ -106,13 +103,16 @@ export function AddRobots({
                         type="text"
                         name="creationUser"
                         id="creationUser"
+                        value={robotData.creationUser}
                         placeholder="Escribe tu nombre"
                         onInput={handleInput}
                         required
                     />
                 </div>
                 <div className="add-robots__button-container">
-                    <button className="add-robots__button">Crear</button>
+                    <button type="submit" className="add-robots__button">
+                        Crear
+                    </button>
                     <button
                         className="
                         add-robots__button"
